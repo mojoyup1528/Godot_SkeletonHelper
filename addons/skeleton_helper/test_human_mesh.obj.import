@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/test_human_mesh.obj-cbe891ec1b5deec0caef98261514c62b.mesh"
+
+[deps]
+
+files=[ "res://.import/test_human_mesh.obj-cbe891ec1b5deec0caef98261514c62b.mesh" ]
+
+source_file="res://addons/skeleton_helper/test_human_mesh.obj"
+dest_files=[ "res://.import/test_human_mesh.obj-cbe891ec1b5deec0caef98261514c62b.mesh", "res://.import/test_human_mesh.obj-cbe891ec1b5deec0caef98261514c62b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=511

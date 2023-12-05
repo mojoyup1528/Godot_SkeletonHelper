@@ -1,0 +1,168 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/skeleton_helper/skeleton_helper_ui.gd" type="Script" id=1]
+
+[node name="skeleton_helper_ui" type="Control"]
+anchor_right = 0.195
+anchor_bottom = 1.8
+margin_right = 0.319992
+rect_min_size = Vector2( 200, 1080 )
+script = ExtResource( 1 )
+
+[node name="buttons" type="GridContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="titleLbl" type="Label" parent="buttons"]
+margin_right = 183.0
+margin_bottom = 14.0
+text = "SKELETON HELPER"
+
+[node name="add_to_group" type="Button" parent="buttons"]
+margin_top = 18.0
+margin_right = 183.0
+margin_bottom = 38.0
+text = "Update Bone Groups"
+
+[node name="update_mesh" type="Button" parent="buttons"]
+margin_top = 42.0
+margin_right = 183.0
+margin_bottom = 62.0
+text = "Update Scene Nodes"
+
+[node name="set_bone_pos" type="Button" parent="buttons"]
+margin_top = 66.0
+margin_right = 183.0
+margin_bottom = 86.0
+text = "Update/Set Bone Positions"
+
+[node name="attach_mesh" type="Button" parent="buttons"]
+margin_top = 90.0
+margin_right = 183.0
+margin_bottom = 110.0
+text = "Attach Skeleton to Mesh"
+
+[node name="assign_mesh_data" type="Button" parent="buttons"]
+margin_top = 114.0
+margin_right = 183.0
+margin_bottom = 134.0
+text = "Assign Bones and Weights"
+
+[node name="Label" type="Label" parent="buttons"]
+margin_top = 138.0
+margin_right = 183.0
+margin_bottom = 152.0
+
+[node name="clear_skeleton" type="Button" parent="buttons"]
+margin_top = 156.0
+margin_right = 183.0
+margin_bottom = 176.0
+text = "Clear Skeleton"
+
+[node name="Label2" type="Label" parent="buttons"]
+margin_top = 180.0
+margin_right = 183.0
+margin_bottom = 194.0
+
+[node name="create_bone" type="Button" parent="buttons"]
+margin_top = 198.0
+margin_right = 183.0
+margin_bottom = 218.0
+text = "Add Bone"
+
+[node name="create_IK" type="Button" parent="buttons"]
+margin_top = 222.0
+margin_right = 183.0
+margin_bottom = 242.0
+text = "Add SkeletonIK"
+
+[node name="Bone_array" type="ItemList" parent="buttons"]
+margin_top = 246.0
+margin_right = 183.0
+margin_bottom = 342.0
+rect_min_size = Vector2( 0, 96 )
+
+[node name="remove_bone_in_array" type="Button" parent="buttons"]
+margin_top = 346.0
+margin_right = 183.0
+margin_bottom = 366.0
+text = "REMOVE"
+
+[node name="Label3" type="Label" parent="buttons"]
+margin_top = 370.0
+margin_right = 183.0
+margin_bottom = 384.0
+
+[node name="panels" type="Panel" parent="."]
+margin_left = 16.0
+margin_top = 448.0
+margin_right = 176.0
+margin_bottom = 648.0
+rect_min_size = Vector2( 0, 200 )
+
+[node name="createBoneTtl" type="Label" parent="panels"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+text = "CREATE A NEW BONE:"
+
+[node name="createBoneLbl" type="Label" parent="panels/createBoneTtl"]
+margin_left = 80.0
+margin_top = 32.0
+margin_right = 152.0
+margin_bottom = 46.0
+text = "bone name"
+
+[node name="createBoneTxt" type="TextEdit" parent="panels/createBoneTtl"]
+margin_left = 8.0
+margin_top = 48.0
+margin_right = 152.0
+margin_bottom = 80.0
+wrap_enabled = true
+
+[node name="createBoneAccptBtn" type="Button" parent="panels/createBoneTtl"]
+margin_left = 88.0
+margin_top = 168.0
+margin_right = 152.0
+margin_bottom = 188.0
+text = "ACCEPT"
+
+[node name="createIKTtl" type="Label" parent="panels"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+text = "CREATE A NEW IK:"
+
+[node name="createIKLbl" type="Label" parent="panels/createIKTtl"]
+margin_left = 48.0
+margin_top = 32.0
+margin_right = 156.0
+margin_bottom = 46.0
+text = "skeletonIK name"
+
+[node name="createIKTxt" type="TextEdit" parent="panels/createIKTtl"]
+margin_left = 8.0
+margin_top = 48.0
+margin_right = 155.0
+margin_bottom = 80.0
+wrap_enabled = true
+
+[node name="createIKAccptBtn" type="Button" parent="panels/createIKTtl"]
+margin_left = 88.0
+margin_top = 168.0
+margin_right = 152.0
+margin_bottom = 188.0
+text = "ACCEPT"
+
+[connection signal="pressed" from="buttons/add_to_group" to="." method="_on_add_to_group_pressed"]
+[connection signal="pressed" from="buttons/update_mesh" to="." method="_on_update_mesh_pressed"]
+[connection signal="pressed" from="buttons/set_bone_pos" to="." method="_on_set_bone_pos_pressed"]
+[connection signal="pressed" from="buttons/attach_mesh" to="." method="_on_attach_mesh_pressed"]
+[connection signal="pressed" from="buttons/assign_mesh_data" to="." method="_on_assign_mesh_data_pressed"]
+[connection signal="pressed" from="buttons/clear_skeleton" to="." method="_on_clear_skeleton_pressed"]
+[connection signal="pressed" from="buttons/create_bone" to="." method="_on_create_bone_pressed"]
+[connection signal="pressed" from="buttons/create_IK" to="." method="_on_create_IK_pressed"]
+[connection signal="item_selected" from="buttons/Bone_array" to="." method="_on_Bone_array_item_selected"]
+[connection signal="button_up" from="buttons/remove_bone_in_array" to="." method="_on_remove_bone_in_array_button_up"]
+[connection signal="button_up" from="panels/createBoneTtl/createBoneAccptBtn" to="." method="_on_acceptBtnBone_button_up"]
+[connection signal="button_up" from="panels/createIKTtl/createIKAccptBtn" to="." method="_on_acceptBtnIK_button_up"]
